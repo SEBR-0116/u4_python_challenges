@@ -16,6 +16,35 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def minutes_to_seconds (num):
+     print(num * 60)
+     
+#minutes_to_seconds(5)
+
+def hour_to_seconds(num):
+     print(num * 3600)
+
+#hour_to_seconds(24)
+
+def seconds_in_day ():
+     seconds = 24 * 3600
+     print(seconds)
+
+#seconds_in_day()
+
+def hours_june ():
+     hours= 30 * 24 
+     print(hours)
+
+#hours_june()
+
+def minute_august():
+   hours= 24 * 31 
+   minutes = hours * 60 
+   print(minutes)
+
+#minute_august()
 # ---------------------------------
 
 
@@ -24,17 +53,34 @@
 
 # Write a function named mid that takes a string as its parameter. Your function should extract and return the middle letter. If there is no middle letter, your function should return the empty string.
 # For example, mid("abc") should return "b" and mid("aaaa") should return "".
+   
 
+          #len () is used to determine the lengh of a sequence. 
+   
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid (x):
+    lengh = len (x)
+    if lengh % 2 == 0 :
+         return ""
+    else:
+         middle = lengh // 2
+         return x[middle]
+    
+# print(mid("abc"))
+# print(mid("aaaa"))
 # ---------------------------------
 
 
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
+def hide_creditcardnum (cc_number):
+     hidden_card =  '*' * (len(cc_number) - 4) + cc_number[-4:]
+     return hidden_card
 
-
+#print(hide_creditcardnum("1234564444"))
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
@@ -47,12 +93,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -63,6 +109,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+#print(len(statuses))
+
+   #create a list with the values of the dictionary and use count () method to count the number of "online" in the list 
+online_count = list(statuses.values()).count("online")
+
+#print(online_count)
 # ---------------------------------
 
 
@@ -73,6 +126,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discount(num1, num2):
+    discounted_amount = num2 / 100 * num1
+    return num1 - discounted_amount
+
+#print(discount(100, 20))
 # ---------------------------------
 
 
@@ -81,9 +140,18 @@
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
+# hypotenuse = a**2 + b**2 = c**2 
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math 
+
+def calculate_hypotenuse(adjacent, opposite):
+    hypotenuse = math.sqrt(adjacent**2 + opposite**2)
+    return hypotenuse
+
+#print(calculate_hypotenuse(4,3))
+
 # ---------------------------------
 
 
@@ -95,6 +163,20 @@
 # In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
+#Fn = Fn-1 + Fn-2
+
+
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonacci_intervals(a, b, intervals=9):
+    fibonacci_sequence = [a, b]
+    while len(fibonacci_sequence) < intervals + 2:
+        next_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_number)
+    return fibonacci_sequence[2:]
+
+print(fibonacci_intervals(0,1))
+     
+
 # ---------------------------------
