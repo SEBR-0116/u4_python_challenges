@@ -58,7 +58,7 @@ def mid(s):
 def hide_card_number(card_number):
     return '*' * (len(card_number) - 4) + card_number[-4:]
 
-print(hide_card_number("1234567894444"))
+#print(hide_card_number("1234567894444"))
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
 
@@ -78,7 +78,17 @@ print(hide_card_number("1234567894444"))
 # Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
 # Your function should return the number of people who are online.
 
+def online_count(statuses):
+    return sum(1 for status in statuses.values() if status == "online")
 
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(f"number of people online: {online_count(statuses)}")
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
