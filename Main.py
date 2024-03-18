@@ -1,3 +1,4 @@
+import math
 # Python Challenges
 
 
@@ -104,7 +105,7 @@ def apply_discount(price, discount_percentage):
     final_price = price - discount_amount
     return final_price
 
-print(apply_discount(100, 20))
+#print(apply_discount(100, 20))
 
 # ---------------------------------
 #      Solution Goes Here ->
@@ -117,6 +118,10 @@ print(apply_discount(100, 20))
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
 
+def calculate_hypotenuse(adjacent, opposite):
+    return round(math.hypot(adjacent, opposite))
+
+print(calculate_hypotenuse(3, 4))
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
