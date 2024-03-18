@@ -137,6 +137,25 @@ print(hide_credit_card_number("9786543210000"))
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# count of online status 
+def online_count(statuses):
+    online_users = 0
+
+    for status in statuses.values():
+        if status == "online":
+            online_users += 1
+
+    return online_users
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -147,6 +166,18 @@ print(hide_credit_card_number("9786543210000"))
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# give the discount
+def apply_discount(full_price, discount_percentage):
+    discounted_price = full_price - (full_price * discount_percentage / 100)
+
+    return discounted_price
+
+full_price = 100
+discount_percentage = 20
+discounted_price = apply_discount(full_price, discount_percentage)
+
+print("Discounted price:", discounted_price)
 # ---------------------------------
 
 
@@ -158,6 +189,24 @@ print(hide_credit_card_number("9786543210000"))
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# pythagoren theorum
+def pythagorean_theorem(adjacent, opposit):
+    adjacent_squared = adjacent ** 2
+
+    opposit_squared = opposit ** 2
+
+    hypotenuse_squared = adjacent_squared + opposit_squared
+
+    hypotenuse = hypotenuse_squared ** 0.5
+
+    return hypotenuse
+
+adjacent_leg = 3
+opposite_leg = 4
+hypotenuse = pythagorean_theorem(adjacent_leg, opposite_leg)
+
+print("Hypotenuse:", hypotenuse)
 # ---------------------------------
 
 
@@ -171,4 +220,19 @@ print(hide_credit_card_number("9786543210000"))
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# fibonacci sequence
+def fibonacci_sequence(a, b):
+    sequence = [a, b]
+    for _ in range(9):
+        next_num = sequence[-1] + sequence[-2]
+        sequence.append(next_num)
+    
+    return sequence
+
+starting_number_1 = 0
+starting_number_2 = 1
+next_nine_intervals = fibonacci_sequence(starting_number_1, starting_number_2)
+
+print("Next nine intervals using Fibonacci Sequence:", next_nine_intervals)
 # ---------------------------------
