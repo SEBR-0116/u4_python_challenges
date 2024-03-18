@@ -4,8 +4,8 @@
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
-# -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
+# - Then take it up a step further, converting Hours into seconds (1 -> 3600)
+# - We're on the right track here, how many seconds are in a day
 # - How many Hours are in the month of June? 
 # - How many Minutes are in the month of August?
  
@@ -15,7 +15,38 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+
+#convert minutes to secongs
+def minutes_to_seconds (minutes):
+    return minutes*60
+print(minutes_to_seconds(1)) #returns 60
+print(minutes_to_seconds(5)) #returns 30-
+
+#convert hours to secongs
+def hours_to_seconds (hours):
+    return hours*60*60
+print(hours_to_seconds(1)) #returns 3600
+
+#convert day to seconds
+def day_to_seconds (day):
+    return day*60*60*24
+print(day_to_seconds(1)) #returns 86400
+
+#convert days in June to hours
+def hours_in_June (hours):
+    return hours*24
+print(hours_in_June(30)) #returns 720
+
+#convert days in August to minutes
+def minutes_in_August (minutes):
+    return minutes*60*24
+print(minutes_in_August(31)) #returns 44640
+
+#convert year to minutes
+def minutes_in_a_year (minutes):
+    return minutes*60*24
+print(minutes_in_a_year(365)) #returns 525600
+
 # ---------------------------------
 
 
@@ -27,7 +58,17 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def mid (string):
+    length = len(string)
+
+    if length%2 == 0:
+        return ""
+    else:
+        middle_index = length // 2
+        return string[middle_index]
+print(mid("apple")) #returns "p"
+print(mid("doctor")) #returns ""
+print(mid("teacher")) #returns "c"
 # ---------------------------------
 
 
@@ -36,7 +77,20 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+
+#separate '*' part of number and visible part of number
+#hide everything from the 4th to last number and before
+#show everything from the 4th to last number and after
+#combine those two numbers
+
+def hide_credit_card_number(card_number):
+    hidden_part = '*' * (len(card_number) - 4)
+    visibile_part = card_number[-4:]
+    hidden_card_number = hidden_part + visibile_part
+    return hidden_card_number
+
+print (hide_credit_card_number("12345678912345")) #returns "**********2345"
+
 # ---------------------------------
 
 
@@ -62,7 +116,25 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+#count starts at 0
+#if status equals "online" add 1 to status count
+#iterate througth status values
+
+def online_count(statuses):
+    count = 0
+    for status in statuses.values():
+        if status == "online":
+            count += 1
+    return count
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(online_count(statuses)) #returns "2"
 # ---------------------------------
 
 
@@ -72,7 +144,19 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+
+# parameters = fullprice and discoutn
+# calculate discount (full price * % | % is discount/100)
+# full price - discount equals discounted price
+
+def discounted_price (fullprice, discount):
+    discount_amount = fullprice * (discount / 100)
+    discounted_price = fullprice - discount_amount
+    return discounted_price
+
+print(discounted_price (120,20))
+
+
 # ---------------------------------
 
 
@@ -83,7 +167,19 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+
+# a**2 + b**2 = c**2
+## c= square root of a**2 + b**2
+#googled how to include square root
+
+import math 
+
+def calc_hypot (a, b):
+    c = math.sqrt(a**2 + b**2)
+    return (c)
+
+print(calc_hypot(2,3)) #returns "3.60555"
+
 # ---------------------------------
 
 
@@ -96,5 +192,14 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+def fibonacci (num1, num2):
+    print(num1)
+    print (num2)
+
+    for _ in range(9):
+        next_num = num1+num2
+        print(next_num)
+        num1, num2 = num2, next_num
+  
+fibonacci(0,1)
 # ---------------------------------
