@@ -1,5 +1,6 @@
-# Python Challenges
+import math
 
+# Python Challenges
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
@@ -18,7 +19,23 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
+"""
+def minutes_to_seconds(minutes):
+    return minutes * 60
 
+def hours_to_minutes(hours):
+    return hours * 60
+
+def days_to_hours(days):
+    return days * 24
+
+
+print(f"There are {minutes_to_seconds(hours_to_minutes(days_to_hours(1)))} Seconds in a day")
+print(f"There are {days_to_hours(30)} hours in the month of June")
+print(f"There are {hours_to_minutes(days_to_hours(30))} minutes in the month of August")
+
+print(f"{hours_to_minutes(days_to_hours(365))} miiiinuutes!")
+"""
 
 #  2) Middle letter
 
@@ -30,6 +47,15 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
+'''
+def mid(parameter: str):
+    if (parameter.__len__() & 2 == 0):
+        return ""
+    else:
+        return parameter[int(parameter.__len__() / 2)]
+    
+print(mid('abcd'))
+'''
 
 # ### 3) Hide the credit card number
 # Write a function in Python that accepts a credit card number. It should return a string where all the characters are hidden with an asterisk except the last four. For example, if the function gets sent "1234567894444", then it should return "*********4444".
@@ -39,22 +65,23 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
-
+"""
+def hide_credit_card_number(credit_card_number: str):
+    if (credit_card_number.isnumeric()):
+        return "************" + credit_card_number[-4:] #ideally you don't want anyone to know the length so I just hard coded *
+"""
 
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
 
 # For example, consider the following dictionary:
 
-# ```
 # statuses = {
 #     "John": "online",
 #     "Paul": "offline",
 #     "George": "online",
 #     "Ringo": "offline"
 # }
-
-# ```
 
 # In this case, the number of people online is 2.
 # Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
@@ -65,7 +92,10 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
-
+'''
+def online_count(statuses_dict):
+    return {k:v for k, v in statuses_dict.items() if v == "online"}.__len__()
+'''
 
 #  5) Give me the discount
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
@@ -75,17 +105,24 @@
 #      Solution Goes Here ->
 # ---------------------------------
 
+'''
+def add_discount(price,discount):
+    return price * (1 - (discount * 0.01))
+'''
 
 #  6) Pythagorean Theorum
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
-
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
 
+'''
+def hypotenouse(a,b):
+    return math.sqrt((a ** 2) + (b ** 2))
+'''
 
 #  7) Fibonacci Sequence 
 # Everyone's favorite Math Problem!
