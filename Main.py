@@ -16,6 +16,51 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# convert minutes to seconds
+def minutes_to_seconds(minutes):
+    print(minutes * 60)
+
+minutes_to_seconds(1)
+minutes_to_seconds(5)
+
+# convent hours into seconds
+def time_to_seconds(time, unit='mintues'):
+    if unit == 'hours':
+        time *= 60
+    return time * 60
+
+print(time_to_seconds(1, 'mintues'))
+print(time_to_seconds(5, 'mintues'))
+print(time_to_seconds(1, 'hours'))
+print(time_to_seconds(2, 'hours'))
+
+# seconds in a day
+seconds_in_a_day = 24 * 60 * 60
+print("Number of seconds in a day:", seconds_in_a_day)
+
+# hours in the month of June
+days_in_june = 30
+hours_in_a_day = 24
+hours_in_june = days_in_june * hours_in_a_day
+print("Number of hours in the month of June:", hours_in_june)
+
+# minutes in the month of August
+days_in_august = 31
+hours_in_a_day = 24
+minutes_in_an_hour = 60
+minutes_in_august = days_in_august * hours_in_a_day * minutes_in_an_hour
+print("Number of minutes in the month of August:", minutes_in_august)
+
+# Bouns #1 - Minutes in a year
+days_in_non_leap_year = 365
+days_in_leap_year = 366
+hours_in_a_day = 24
+minutes_in_an_hour = 60
+minutes_in_non_leap_year = days_in_non_leap_year * hours_in_a_day * minutes_in_an_hour
+minutes_in_leap_year = days_in_leap_year * hours_in_a_day * minutes_in_an_hour
+minutes_in_a_year = (minutes_in_non_leap_year + minutes_in_leap_year) / 2
+print("Number of minutes in a year (on average):", minutes_in_a_year)
 # ---------------------------------
 
 
