@@ -28,9 +28,9 @@ def hours_in_june():
 def minutes_in_august():
     return 24 * 60 *31
 
-print (f"1 minutes is {minutes_to_seconds(1)} seconds")
-print (f"5 minutes are {minutes_to_seconds(5)} seconds")
-print (f"1 hour is {hours_to_seconds(1)} seconds")
+#print (f"1 minutes is {minutes_to_seconds(1)} seconds")
+#print (f"5 minutes are {minutes_to_seconds(5)} seconds")
+#print (f"1 hour is {hours_to_seconds(1)} seconds")
 def mid(s):
     length = len(s)
     if length % 2 == 1:
