@@ -39,8 +39,8 @@ def mid(s):
     else:
         return ""
     
-print (f"Middle letter of 'abc' : '{mid('abc')}'")
-print (f"Middle letter of 'aaaa' : '{mid('aaaa')}'")
+#print (f"Middle letter of 'abc' : '{mid('abc')}'")
+#print (f"Middle letter of 'aaaa' : '{mid('aaaa')}'")
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
@@ -55,7 +55,10 @@ print (f"Middle letter of 'aaaa' : '{mid('aaaa')}'")
 # ---------------------------------
 
 
+def hide_card_number(card_number):
+    return '*' * (len(card_number) - 4) + card_number[-4:]
 
+print(hide_card_number("1234567894444"))
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
 
