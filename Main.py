@@ -15,7 +15,36 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def minutes_to_seconds(minutes):
+    return minutes * 60
+
+def hours_to_seconds(hours):
+    return hours * 3600
+
+
+seconds_in_a_day = hours_to_seconds(24)
+print("Seconds in a day:", seconds_in_a_day)
+
+hours_in_june = 30 * 24 
+print("Hours in June:", hours_in_june)
+
+minutes_in_august = 31 * 24 * 60  
+print("Minutes in August:", minutes_in_august)
+
+minutes_in_a_non_leap_year = 365 * 24 * 60
+minutes_in_a_leap_year = 366 * 24 * 60
+days_in_a_year = 365
+weeks_in_a_year = 52
+cups_of_coffee_per_day = 2  
+cups_of_coffee_in_a_year = cups_of_coffee_per_day * 365  
+
+print("Minutes in a non-leap year:", minutes_in_a_non_leap_year)
+print("Minutes in a leap year:", minutes_in_a_leap_year)
+print("Days in a non-leap year:", days_in_a_year)
+print("Weeks in a year:", weeks_in_a_year)
+print("Cups of coffee in a non-leap year:", cups_of_coffee_in_a_year)
+
+
 # ---------------------------------
 
 
@@ -27,7 +56,18 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def middle(string):
+    length = len(string)
+    
+    if length == 0 or length % 2 == 0:
+        return ""
+    
+    middle_index = length // 2
+    
+    return string[middle_index]
+
+print(middle("aaaa"))   
+print(middle("abc"))
 # ---------------------------------
 
 
@@ -36,7 +76,17 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def card_number(card_number):
+    length = len(card_number)
+    
+    if length <= 4:
+        return card_number
+    
+    hidden_character = '*' * (length - 4)
+    last_four = card_number[-4:]
+    return hidden_character + last_four
+
+print(card_number("4837511248367593"))
 # ---------------------------------
 
 
@@ -62,7 +112,18 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def people_online(statuses):
+    return sum(1 for status in statuses.values() if status == "online")
+
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(people_online(statuses))
 # ---------------------------------
 
 
@@ -72,7 +133,14 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+def apply_discount(full_price, discount_percent):
+    discounted_price = full_price - (full_price * discount_percent / 100)
+    return discounted_price
+
+full_price = 100
+discount_percentage = 20
+discounted_price = apply_discount(full_price, discount_percentage)
+print("Discounted price:", discounted_price)
 # ---------------------------------
 
 
@@ -83,7 +151,15 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+import math
+def calculate_hypotenuse(adjacent, opposite):
+    hypotenuse = math.hypot(adjacent, opposite)
+    return hypotenuse
+
+adjacent_leg = 3
+opposite_leg = 4
+hypotenuse = calculate_hypotenuse(adjacent_leg, opposite_leg)
+print("Hypotenuse:", hypotenuse)
 # ---------------------------------
 
 
@@ -96,5 +172,15 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+def fibonacci_intervals(a, b):
+    fibonacci_sequence = [a, b]
+    for _ in range(2, 18):
+        next_num = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_num)
+    return fibonacci_sequence
+
+a = 0
+b = 1
+continuing_intervals = fibonacci_intervals(a, b)
+print("Next intervals in Fibonacci sequence starting from {} and {}: {}".format(a, b, continuing_intervals))
 # ---------------------------------
