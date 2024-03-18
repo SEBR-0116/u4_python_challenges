@@ -16,6 +16,29 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def minutes_to_seconds(minutes):
+    return minutes * 60
+print(minutes_to_seconds(1))
+
+def hours_to_seconds(hours):
+    return hours * 3600
+print(hours_to_seconds(1))
+
+seconds_in_a_day = hours_to_seconds(24)
+hours_in_june = 30 * 24
+minutes_in_august = 31 * 24 * 60
+
+print(seconds_in_a_day)
+print(hours_in_june)
+print(minutes_in_august)
+# Bonus:
+
+minutes_in_a_year = 365 * 24 * 60
+days_in_a_year = 365
+weeks_in_a_year = days_in_a_year / 7
+cups_of_coffee_in_a_year = days_in_a_year * 3
+
+print(minutes_in_a_year, days_in_a_year, weeks_in_a_year, cups_of_coffee_in_a_year)
 # ---------------------------------
 
 
@@ -28,6 +51,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def mid(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""
+    else:
+        return s[length // 2]
+print(mid("abc"))
+print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -37,6 +68,10 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide_credit_card_number(card_number):
+    hidden_digits = len(card_number) - 4
+    return '*' * hidden_digits + card_number[-4:]
+print(hide_credit_card_number("1234567897777"))
 # ---------------------------------
 
 
@@ -63,6 +98,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def online_count(statuses):
+    return list(statuses.values()).count("online")
+
+statuses = {"John": "online", "Paul": "offline", "George": "online", "Ringo": "offline"}
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -73,6 +113,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def apply_discount(full_price, discount_percentage):
+    discount_amount = full_price * (discount_percentage / 100)
+    discounted_price = full_price - discount_amount
+    return discounted_price
+print(apply_discount(100, 20))
 # ---------------------------------
 
 
@@ -84,6 +129,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math
+
+def calculate_hypotenuse(adjacent, opposite):
+    return math.sqrt(adjacent**2 + opposite**2)
+print(calculate_hypotenuse(3, 4))
 # ---------------------------------
 
 
@@ -97,4 +147,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci_sequence(start1, start2):
+    sequence = [start1, start2]
+    for _ in range(9):
+        next_number = sequence[-1] + sequence[-2]
+        sequence.append(next_number)
+    return sequence
+print(fibonacci_sequence(0, 1))
 # ---------------------------------
