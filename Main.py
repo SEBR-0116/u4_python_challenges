@@ -73,6 +73,19 @@ print("Number of minutes in a year (on average):", minutes_in_a_year)
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# mid function as parameter
+def mid(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle_index = length // 2
+        return s[middle_index]
+    
+print(mid("hello"))
+print(mid("abc"))
+print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -82,6 +95,22 @@ print("Number of minutes in a year (on average):", minutes_in_a_year)
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# Credit card number hidden with only four numbers
+def hide_credit_card_number(card_number):
+    length = len(card_number)
+ 
+    hiddden_part = '*' * (length - 4)
+
+    last_four_digits = card_number[-4:]
+
+    hidden_card_number = hiddden_part + last_four_digits
+
+    return hidden_card_number
+
+print(hide_credit_card_number("1234567894444"))
+print(hide_credit_card_number("9786543210000"))
+
 # ---------------------------------
 
 
