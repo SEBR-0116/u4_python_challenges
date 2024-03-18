@@ -16,6 +16,51 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# convert minutes to seconds
+def minutes_to_seconds(minutes):
+    print(minutes * 60)
+
+minutes_to_seconds(1)
+minutes_to_seconds(5)
+
+# convent hours into seconds
+def time_to_seconds(time, unit='mintues'):
+    if unit == 'hours':
+        time *= 60
+    return time * 60
+
+print(time_to_seconds(1, 'mintues'))
+print(time_to_seconds(5, 'mintues'))
+print(time_to_seconds(1, 'hours'))
+print(time_to_seconds(2, 'hours'))
+
+# seconds in a day
+seconds_in_a_day = 24 * 60 * 60
+print("Number of seconds in a day:", seconds_in_a_day)
+
+# hours in the month of June
+days_in_june = 30
+hours_in_a_day = 24
+hours_in_june = days_in_june * hours_in_a_day
+print("Number of hours in the month of June:", hours_in_june)
+
+# minutes in the month of August
+days_in_august = 31
+hours_in_a_day = 24
+minutes_in_an_hour = 60
+minutes_in_august = days_in_august * hours_in_a_day * minutes_in_an_hour
+print("Number of minutes in the month of August:", minutes_in_august)
+
+# Bouns #1 - Minutes in a year
+days_in_non_leap_year = 365
+days_in_leap_year = 366
+hours_in_a_day = 24
+minutes_in_an_hour = 60
+minutes_in_non_leap_year = days_in_non_leap_year * hours_in_a_day * minutes_in_an_hour
+minutes_in_leap_year = days_in_leap_year * hours_in_a_day * minutes_in_an_hour
+minutes_in_a_year = (minutes_in_non_leap_year + minutes_in_leap_year) / 2
+print("Number of minutes in a year (on average):", minutes_in_a_year)
 # ---------------------------------
 
 
@@ -28,6 +73,19 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# mid function as parameter
+def mid(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle_index = length // 2
+        return s[middle_index]
+    
+print(mid("hello"))
+print(mid("abc"))
+print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -37,6 +95,22 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# Credit card number hidden with only four numbers
+def hide_credit_card_number(card_number):
+    length = len(card_number)
+ 
+    hiddden_part = '*' * (length - 4)
+
+    last_four_digits = card_number[-4:]
+
+    hidden_card_number = hiddden_part + last_four_digits
+
+    return hidden_card_number
+
+print(hide_credit_card_number("1234567894444"))
+print(hide_credit_card_number("9786543210000"))
+
 # ---------------------------------
 
 
@@ -63,6 +137,25 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# count of online status 
+def online_count(statuses):
+    online_users = 0
+
+    for status in statuses.values():
+        if status == "online":
+            online_users += 1
+
+    return online_users
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -73,6 +166,18 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# give the discount
+def apply_discount(full_price, discount_percentage):
+    discounted_price = full_price - (full_price * discount_percentage / 100)
+
+    return discounted_price
+
+full_price = 100
+discount_percentage = 20
+discounted_price = apply_discount(full_price, discount_percentage)
+
+print("Discounted price:", discounted_price)
 # ---------------------------------
 
 
@@ -84,6 +189,24 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# pythagoren theorum
+def pythagorean_theorem(adjacent, opposit):
+    adjacent_squared = adjacent ** 2
+
+    opposit_squared = opposit ** 2
+
+    hypotenuse_squared = adjacent_squared + opposit_squared
+
+    hypotenuse = hypotenuse_squared ** 0.5
+
+    return hypotenuse
+
+adjacent_leg = 3
+opposite_leg = 4
+hypotenuse = pythagorean_theorem(adjacent_leg, opposite_leg)
+
+print("Hypotenuse:", hypotenuse)
 # ---------------------------------
 
 
@@ -97,4 +220,19 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# fibonacci sequence
+def fibonacci_sequence(a, b):
+    sequence = [a, b]
+    for _ in range(9):
+        next_num = sequence[-1] + sequence[-2]
+        sequence.append(next_num)
+    
+    return sequence
+
+starting_number_1 = 0
+starting_number_2 = 1
+next_nine_intervals = fibonacci_sequence(starting_number_1, starting_number_2)
+
+print("Next nine intervals using Fibonacci Sequence:", next_nine_intervals)
 # ---------------------------------
