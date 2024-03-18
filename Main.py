@@ -17,15 +17,30 @@
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
+def minutes_to_seconds(minutes):
+    return minutes * 60
+def hours_to_seconds(hours):
+    return hours * 3600
+def seconds_in_a_day():
+    return hours_to_seconds(24)
+def hours_in_june():
+    return 24 * 30
+def minutes_in_august():
+    return 24 * 60 *31
 
-
-
-#  2) Middle letter
-
-# Write a function named mid that takes a string as its parameter. Your function should extract and return the middle letter. If there is no middle letter, your function should return the empty string.
-# For example, mid("abc") should return "b" and mid("aaaa") should return "".
-
-
+print (f"1 minutes is {minutes_to_seconds(1)} seconds")
+print (f"5 minutes are {minutes_to_seconds(5)} seconds")
+print (f"1 hour is {hours_to_seconds(1)} seconds")
+def mid(s):
+    length = len(s)
+    if length % 2 == 1:
+        middle_index = length // 2
+        return s[middle_index]
+    else:
+        return ""
+    
+print (f"Middle letter of 'abc' : '{mid('abc')}'")
+print (f"Middle letter of 'aaaa' : '{mid('aaaa')}'")
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
