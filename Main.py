@@ -5,17 +5,42 @@
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
 # -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
-# - How many Minutes are in the month of August?
+# -  We're on the right track here, how many seconds are in a day? 86,400
+# - How many Hours are in the month of June?  720
+# - How many Minutes are in the month of August? 44,640
  
  
- # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
+ # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 525,600 in non-leap, 527,040 in leap
  # In days, in weeks, in cups of coffee?
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def convert_from_mins(min):
+    return min*60
+
+def convert_from_hrs(hr):
+    return convert_from_mins(hr*60)
+
+def convert_from_day(day):
+    return convert_from_hrs(day*24)
+
+# print(convert_from_day(1))
+
+def hrs_in_june():
+    print(24*30)
+
+# hrs_in_june()
+
+def mins_in_aug():
+    print(31*24*60)
+
+# mins_in_aug()
+
+def mins_in_yr():
+    print(365*24*60)
+    print(366*24*60)
+
+# mins_in_yr()
 # ---------------------------------
 
 
@@ -27,7 +52,11 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def mid(string):
+    if len(string) % 2 == 0:
+        return ""
+    else:
+        return string[len(string) // 2]
 # ---------------------------------
 
 
@@ -36,9 +65,13 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def encode(num):
+    string = str(num)
+    length = len(string) - 4
+    return '*' * length + string[-4:]
 # ---------------------------------
 
+# print(encode(1234567890))
 
 
 # ### 4) Online status
@@ -47,12 +80,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -62,9 +95,16 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def online_count(dictionary):
+    status = dictionary.values()
+    count = 0
+    for element in status:
+        if element == 'online':
+            count = count + 1
+    return count
 # ---------------------------------
 
+# print(online_count(statuses))
 
 
 #  5) Give me the discount
@@ -72,18 +112,23 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+def discount_price(full_price, discount_percent):
+    discount = discount_percent / 100
+    discounted_amount = full_price*discount
+    return full_price - discounted_amount
 # ---------------------------------
 
+print(discount_price(100, 20))
 
 #  6) Pythagorean Theorum
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
 
-
 # ---------------------------------
-#      Solution Goes Here ->
+def hypotenuse(side1, side2):
+    hypo_squared = side1**2 + side2**2
+    return hypo_squared**0.5
 # ---------------------------------
 
 
@@ -96,5 +141,10 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+def fibonnaci(num1, num2):
+    arrayOfNums = [num1, num2]
+    for num in range(0, 9):
+        count = arrayOfNums[num] + arrayOfNums[num+1]
+        arrayOfNums.append(count)
+    print(arrayOfNums)
 # ---------------------------------
