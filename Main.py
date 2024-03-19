@@ -1,24 +1,69 @@
+import math
+
 # Python Challenges
 
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
+
+
 # -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
 # -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
+
+
+# - How many Hours are in the month of June?
+# 30 days in June
+
 # - How many Minutes are in the month of August?
- 
- 
- # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
- # In days, in weeks, in cups of coffee?
+# 31 days in august
 
 
+# Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year?
+
+# In days, in weeks, in cups of coffee?
 # ---------------------------------
 #      Solution Goes Here ->
+
+def min_to_sec(minutes=0, hours=0, days=0):
+    return (minutes * 60) + (hours * 3600) + (days * 86400)
+
+
+def sec_to_hours(seconds):
+    return seconds / 3600
+
+
+def sec_to_days(seconds):
+    return seconds / 86400
+
+
+def hours_in_june():
+    seconds = min_to_sec(days=30)
+    hours = sec_to_hours(seconds)
+    return hours
+
+
+def min_per_day(days):
+    return days * 24 * 60
+
+
+def min_in_august():
+    return min_per_day(31)
+
+
+def min_per_year():
+    return min_per_day(365)
+
+
+# print(f"{min_to_sec(minutes=1)} seconds in 1 minute")
+# print(f"{min_to_sec(hours=1)} seconds in 1 hour")
+# print(f"{min_to_sec(days=1)} seconds in 1 day")
+# print(f"{int(hours_in_june())} hours in June")
+# print(f"{int(min_in_august())} minutes in August")
+# print(f"{int(min_per_year())} minutes in 1 year")
+#
+#
 # ---------------------------------
-
-
 
 #  2) Middle letter
 
@@ -28,6 +73,16 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string):
+    if len(string) % 2 == 1:
+        return string[len(string) // 2]
+    else:
+        return ''
+
+
+# print(mid("abc"))
+# print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -37,8 +92,20 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
-# ---------------------------------
+def hide_credit_card(number):
+    num_str = str(number)
+    # hide all numbers except for last 4
+    hidden_nums = '*' * (len(num_str) - 4)
+    # show last 4 numbers
+    show_nums = num_str[-4:]
+    show_card_num = hidden_nums + show_nums
+    return show_card_num
 
+
+# print(hide_credit_card("123456789444"))
+
+
+# ---------------------------------
 
 
 # ### 4) Online status
@@ -47,12 +114,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -63,8 +130,18 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
-# ---------------------------------
+def online_count(arg):
+    count = 0
+    for v in arg.values():
+        if v == 'online':
+            count += 1
+    return count
 
+
+# print(f"People online: {online_count(statuses)}")
+
+
+# ---------------------------------
 
 
 #  5) Give me the discount
@@ -73,6 +150,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def discount_item(x, y):
+    # x = int of full priced item
+    # y = int of discount percentage
+    item = x - x * (y / 100)
+    return item
+
+
+# print(discount_item(100, 20))
+
 # ---------------------------------
 
 
@@ -84,10 +170,18 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def pythageorean_theorum(a, b):
+    # a2 + b2 = c2
+    hypotenuse = math.sqrt(a**2 + b**2)
+    return (hypotenuse)
+
+
+# print(pythageorean_theorum(10, 10))
+
 # ---------------------------------
 
 
-#  7) Fibonacci Sequence 
+#  7) Fibonacci Sequence
 # Everyone's favorite Math Problem!
 
 # The Fibonacci numbers are the numbers in the following integer sequence.
@@ -97,4 +191,9 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fibonacci_sequence(x, y):
+    # fibonacci seq is the sum of the previous 2 numbers in a sequence
+    pass
+
+
 # ---------------------------------
