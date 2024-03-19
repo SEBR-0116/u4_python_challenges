@@ -2,7 +2,6 @@ import math
 
 # Python Challenges
 
-
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
 # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
@@ -55,14 +54,13 @@ def min_per_year():
     return min_per_day(365)
 
 
-# print(f"{min_to_sec(minutes=1)} seconds in 1 minute")
-# print(f"{min_to_sec(hours=1)} seconds in 1 hour")
-# print(f"{min_to_sec(days=1)} seconds in 1 day")
-# print(f"{int(hours_in_june())} hours in June")
-# print(f"{int(min_in_august())} minutes in August")
-# print(f"{int(min_per_year())} minutes in 1 year")
-#
-#
+print(f"{min_to_sec(minutes=1)} seconds in 1 minute")
+print(f"{min_to_sec(hours=1)} seconds in 1 hour")
+print(f"{min_to_sec(days=1)} seconds in 1 day")
+print(f"{int(hours_in_june())} hours in June")
+print(f"{int(min_in_august())} minutes in August")
+print(f"{int(min_per_year())} minutes in 1 year")
+
 # ---------------------------------
 
 #  2) Middle letter
@@ -81,8 +79,8 @@ def mid(string):
         return ''
 
 
-# print(mid("abc"))
-# print(mid("aaaa"))
+print(mid("abc"))
+print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -102,7 +100,7 @@ def hide_credit_card(number):
     return show_card_num
 
 
-# print(hide_credit_card("123456789444"))
+print(hide_credit_card("123456789444"))
 
 
 # ---------------------------------
@@ -138,7 +136,7 @@ def online_count(arg):
     return count
 
 
-# print(f"People online: {online_count(statuses)}")
+print(f"People online: {online_count(statuses)}")
 
 
 # ---------------------------------
@@ -157,7 +155,7 @@ def discount_item(x, y):
     return item
 
 
-# print(discount_item(100, 20))
+print(discount_item(100, 20))
 
 # ---------------------------------
 
@@ -170,13 +168,14 @@ def discount_item(x, y):
 
 # ---------------------------------
 #      Solution Goes Here ->
+# import math
 def pythageorean_theorum(a, b):
     # a2 + b2 = c2
     hypotenuse = math.sqrt(a**2 + b**2)
     return (hypotenuse)
 
 
-# print(pythageorean_theorum(10, 10))
+print(pythageorean_theorum(10, 10))
 
 # ---------------------------------
 
@@ -193,7 +192,19 @@ def pythageorean_theorum(a, b):
 #      Solution Goes Here ->
 def fibonacci_sequence(x, y):
     # fibonacci seq is the sum of the previous 2 numbers in a sequence
-    pass
+
+    # initially start with the first 2 numbers provided
+    fib_list = [x, y]
+
+    # find the next 9 numbers using while loop
+    while len(fib_list) < 11:
+        next_num = fib_list[-1] + fib_list[-2]
+        fib_list.append(next_num)
+
+    return fib_list
+
+
+print(fibonacci_sequence(0, 1))
 
 
 # ---------------------------------
