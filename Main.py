@@ -191,5 +191,14 @@ print(f"Hypotenouse Length :{hypotenouse_length(10,15)}")
 # ---------------------------------
 #      Solution Goes Here ->
 
-def fibonacci():
+def fibonacci(f_num,s_num):
+    fibonacci_array = [f_num,s_num]
+    
+    for x in range(9):
+        result = fibonacci_array[-2] + fibonacci_array[-1]
+        fibonacci_array.append(result)
+        # print(fibonacci_array)
+    return fibonacci_array
+list = fibonacci(5,8)
+print(f"Fibonacci Sequences : {list}")
 # ---------------------------------
