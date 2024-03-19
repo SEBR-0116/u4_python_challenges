@@ -1,3 +1,4 @@
+
 # Python Challenges
 
 
@@ -16,9 +17,24 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def sec_convert_from_min (min):
+    return(min * 60)
+sec_convert_from_min(1)
+
+def sec_convert_from_hour (hour):
+    return(hour * 3600)
+sec_convert_from_hour(1)
+
+sec_in_day = sec_convert_from_hour(24)
+days_in_june = 30
+days_in_august = 31
+
+hours_in_june = sec_convert_from_hour(days_in_june)
+minutes_in_august = (sec_convert_from_hour(24) * days_in_august) / 60
+
+print(f'1) There are {sec_in_day} hours in a day. The month of June has {hours_in_june} hours. August has {minutes_in_august} minutes in the entire month.')
+
 # ---------------------------------
-
-
 
 #  2) Middle letter
 
@@ -28,6 +44,21 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math 
+#ref: https://stackoverflow.com/questions/2356501/how-do-you-round-up-a-number
+
+def mid(string):
+    string_length = len(string)
+    if string_length % 2 == 0:
+        return ""
+    else:
+        middle_after = math.ceil(string_length / 2)
+        middle_index = middle_after - 1 
+        
+    return string[middle_index]
+mid("Stephanie")
+print(f'2) The letter in the middle of the name "Stephanie" is "{mid("Stephanie")}"')
+
 # ---------------------------------
 
 
@@ -37,6 +68,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide_cc_num(cc_num):
+    cc_num_input = []
+    cc_num_input.append(cc_num)
+    return(cc_num_input) 
+    # top_range = len(cc_num) + 1
+    # return(top_range)
+print(hide_cc_num(123))
 # ---------------------------------
 
 
