@@ -16,6 +16,46 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+# def second_conversion(minutes,hours):
+#     return f"Conversion of {minutes} to Seconds is >> {minutes*60} || Conversion of Hours of {hours} to seconds is >> {hours*360}" 
+
+def minutes_to_secounds(minutes):
+    return minutes*60
+print(minutes_to_secounds(5))
+
+def hours_to_second(hours):
+    return hours*minutes_to_secounds(60)
+
+print(hours_to_second(1))
+
+def seconds_in_a_day():
+    return 24*hours_to_second(1)
+
+print(seconds_in_a_day())
+
+def seconds_in_month_august(days):
+    return days*seconds_in_a_day()
+
+
+def hours_in_a_month(days):
+    return days*24
+print(f"Hours in a june Month {hours_in_a_month(30)}")
+
+def minutes_in_august(days):
+    return  days*24*60
+print(f"Minutes in August {minutes_in_august(31)}")
+
+def minutes_in_year():
+    
+    days31_in_year =  minutes_in_august(31)
+    days30_in_year = hours_in_a_month(30)*60
+    days28_in_year = hours_in_a_month(28)*60
+    print(days28_in_year)
+    total_minutes = days31_in_year * 7  + days30_in_year * 4 + days28_in_year
+    return f"Minutes in a year  : {total_minutes}"
+
+print(minutes_in_year())
 # ---------------------------------
 
 
@@ -28,6 +68,19 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string_input):
+    strlength = len(string_input)
+    if strlength % 2 != 0:
+        halfStr = strlength//2
+        
+        return string_input[halfStr]
+        
+    else:
+        return ""
+        
+print(mid('hhAhh'))
+print(mid('happpypppht'))
 # ---------------------------------
 
 
@@ -37,6 +90,18 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def hide_cc_number(cc_number):
+    cc_length = len(cc_number)
+    # print(cc_length)
+    hidden_part =''
+    for  x in range(cc_length - 4): 
+        hidden_part += '*'
+        print (hidden_part)
+    visible_part = cc_number[-4:]
+    card_number = hidden_part + visible_part
+    print(card_number)
+    
+hide_cc_number("1234567890")
 # ---------------------------------
 
 
@@ -63,6 +128,22 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+ }
+
+def online_count(directory):
+    count = 0
+    for key in directory:
+        if directory[key] == 'online':
+            count += 1
+            
+    return count
+    
+print(f"Online count : {online_count(statuses)}")
 # ---------------------------------
 
 
@@ -73,6 +154,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+def discount_price(price,discount):
+    
+    result =  price - price*(discount)*0.01
+    return result
+print(f"Discount price : {discount_price(100,20)}")
 # ---------------------------------
 
 
@@ -84,6 +170,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math
+def hypotenouse_length(Adjacent,Opposite):
+    
+    result = math.sqrt(pow(Adjacent,2)+pow(Opposite,2))
+    return result
+
+print(f"Hypotenouse Length :{hypotenouse_length(10,15)}")
 # ---------------------------------
 
 
@@ -97,4 +190,6 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonacci():
 # ---------------------------------
