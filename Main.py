@@ -121,7 +121,7 @@ def apply_discount(price, discount_percentage):
 def calculate_hypotenuse(adjacent, opposite):
     return round(math.hypot(adjacent, opposite))
 
-print(calculate_hypotenuse(3, 4))
+#print(calculate_hypotenuse(3, 4))
 # ---------------------------------
 #      Solution Goes Here ->
 # ---------------------------------
@@ -134,6 +134,14 @@ print(calculate_hypotenuse(3, 4))
 # 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
 # In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation between two adjacent steps in a list
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
+def find_next_nine_fibonacci(first, second):
+    fibonacci_sequence = [first, second]
+    while len(fibonacci_sequence) < 11:  
+        next_fib = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_fib)
+    return fibonacci_sequence[2:] 
+print(find_next_nine_fibonacci(0, 1))
+
 
 # ---------------------------------
 #      Solution Goes Here ->
