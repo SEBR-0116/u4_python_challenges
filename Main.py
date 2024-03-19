@@ -3,13 +3,35 @@
 
 #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
-# - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
+## - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
+def minutes_to_seconds(minutes):
+            return minutes * 60
+
+minutes = 1
+print(minutes_to_seconds(minutes))
 # -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
+def hours_to_seconds(hours):
+            return hours * 3600
+
+hours = 1
+print(hours_to_seconds(hours))
 # -  We're on the right track here, how many seconds are in a day
+def seconds_in_a_day(seconds_per_hour):
+            return seconds_per_hour * 24
+
+seconds_per_hour = 60
+print(seconds_in_a_day(seconds_per_hour))
 # - How many Hours are in the month of June? 
+def hours_in_june(hours):
+            return hours * 31
+
+hours = 24
+print(hours_in_june(hours))            
 # - How many Minutes are in the month of August?
- 
- 
+def minutes_in_aug():
+            print(60*24*30)        
+
+minutes_in_aug()
  # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
  # In days, in weeks, in cups of coffee?
 
@@ -28,6 +50,16 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(string):
+    length = len(string)
+    if length % 2 == 0:
+            return string[length // 2 -1: length // 2 + 1]
+    else:
+            return string[length // 2]
+    
+input_string = "Mia"
+print(mid(input_string))
 # ---------------------------------
 
 
@@ -37,6 +69,12 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def hide_card_number(card_num):
+        hidden_dig = len(card_num) -4
+        return '*' * hidden_dig + card_num[-4:]
+
+print(hide_card_number("8322381989"))
 # ---------------------------------
 
 
@@ -46,23 +84,38 @@
 
 # For example, consider the following dictionary:
 
-# ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+"""
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
-# ```
+"""
 
 # In this case, the number of people online is 2.
-# Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
+# Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings 
+# of names to the string "online" or "offline", as seen above.
 # Your function should return the number of people who are online.
-
-
+        
 # ---------------------------------
 #      Solution Goes Here ->
+
+def online_count(statuses):
+        count = 0
+        for status in statuses.values():
+                if status == "online":
+                        count += 1
+        return count
+
+statuses = {
+        "Mia" : "online",
+        "Michael" : "online",
+        "Jax" : "offline"
+}
+
+print(online_count(statuses))
 # ---------------------------------
 
 
@@ -71,8 +124,17 @@
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
+
 # ---------------------------------
 #      Solution Goes Here ->
+
+def price(full_price, discount_perc):
+        discounted_price = full_price - (full_price * discount_perc /100)
+        return discounted_price
+
+full_price = 10
+discount_perc = 60
+print(price(full_price, discount_perc))
 # ---------------------------------
 
 
