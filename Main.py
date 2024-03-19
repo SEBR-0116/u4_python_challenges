@@ -1,21 +1,57 @@
 # Python Challenges
 
 
-#  1) The Time Stone: Lets get cosmic here and begin working with Time.
+# #  1) The Time Stone: Lets get cosmic here and begin working with Time.
 
-# - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
-# -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
-# -  We're on the right track here, how many seconds are in a day
-# - How many Hours are in the month of June? 
-# - How many Minutes are in the month of August?
- 
+# # - First, lets create a function that converts Minutes to Seconds (1 ->60, 5 -> 300)
+def min_to_sec (minutes):
+    print(minutes * 60)
+min_to_sec(5)
+    
+# # -  Then take it up a step further, converting Hours into seconds (1 -> 3600)
+def hr_to_sec (hour):
+    print(hour *3600)
+hr_to_sec(1)
+
+# # -  We're on the right track here, how many seconds are in a day
+def day_to_sec (days):
+    print(days *3600* 24)
+day_to_sec(1)
+
+# # - How many Hours are in the month of June? 
+def day_to_hr (days):
+    print(days *24)
+day_to_hr(30)
+
+# # - How many Minutes are in the month of August?
+def day_to_minute (days):
+    print(days * 24 *60)
+day_to_minute(31)
+
+
  
  # Bonus -> Without singing the old showtune in your head, how many Minutes are there in a year? 
+
  # In days, in weeks, in cups of coffee?
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+#      Solution Goes Here -> 
+def yr_to_minute (yr):
+    print(yr * 60 * 24 * 365)
+yr_to_minute(1)
+
+def day_to_minute (days):
+    print(days * 24 *60)
+day_to_minute(1)
+
+def week_to_minute (weeks):
+    print(weeks *60 *24 *7)
+week_to_minute(1)
+
+def coffee_to_minute (coffee):
+    print(coffee * 15 )
+coffee_to_minute(5)
 # ---------------------------------
 
 
@@ -28,6 +64,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid (string):
+    if len(string) % 2 == 0:
+        print ("")
+    else:
+        middlecharacter = int(len(string)/2)
+        print (string[middlecharacter])
+
+mid("bed")
 # ---------------------------------
 
 
@@ -37,6 +82,15 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def hide_cc_numbers (ccnumber):
+    hidden_numbers = "*" * len(ccnumber[:-4])
+    last_four_digits = ccnumber[-4:]
+    print(hidden_numbers + last_four_digits)
+   
+hide_cc_numbers("1234567894444")
+
+
 # ---------------------------------
 
 
@@ -63,6 +117,26 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def online_count (status):
+    statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline",
+    "Minee": "online",
+    "Daisy": "online",
+    }
+
+    count = 0
+
+    for status in statuses.values():
+        if status == "online":
+            count += 1
+    print (count)   
+
+online_count("online")
+
 # ---------------------------------
 
 
@@ -73,6 +147,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discountedprice (fullprice, discount):
+    print((fullprice)-(fullprice * discount * 0.01))
+
+discountedprice(100, 20)
+
+
 # ---------------------------------
 
 
@@ -84,6 +165,14 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+import math
+
+def hypotenous (leg1, leg2):
+    print(math.sqrt((leg1 ** 2) + (leg2 **2)))
+
+hypotenous(3, 5)
+
+
 # ---------------------------------
 
 
@@ -97,4 +186,22 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonacci(num):
+   counter = 0
+
+   first = 0
+   second = 1
+   temp = 0
+ 
+   while counter <= num:
+      print(first)
+      temp = first + second
+      first = second
+      second = temp
+      counter = counter + 1
+
+fibonacci(9)
+    
+
 # ---------------------------------
