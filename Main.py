@@ -81,7 +81,7 @@ def hide_cc_num(cc_num):
 
     show_cc_last_4 = "".join(beg_cc_str) + last_4_cc
 
-    print(show_cc_last_4)
+    print(f"3) {show_cc_last_4}")
     return(show_cc_last_4)
   
 hide_cc_num(2276542210)
@@ -93,25 +93,29 @@ hide_cc_num(2276542210)
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
-
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 # ```
-
 # In this case, the number of people online is 2.
 # Write a function named online_count that takes one parameter. The parameter is a dictionary that maps from strings of names to the string "online" or "offline", as seen above.
 # Your function should return the number of people who are online.
 
-
 # ---------------------------------
 #      Solution Goes Here ->
+def online_count(statuses_dict):
+    count_showing_online = 0
+    for key, value in statuses_dict.items():
+    #ref: https://www.infoworld.com/article/3623689/how-to-use-the-python-for-loop.html
+        if value == 'online':
+            count_showing_online += 1
+    print(f"4) {count_showing_online}")
+    return(count_showing_online)
+online_count(statuses)
 # ---------------------------------
-
-
 
 #  5) Give me the discount
 # Create a function in Python that accepts two parameters. The first should be the full price of an item as an integer. The second should be the discount percentage as an integer.
