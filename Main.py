@@ -69,15 +69,23 @@ print(f'2) The letter in the middle of the name "Stephanie" is "{mid("Stephanie"
 # ---------------------------------
 #      Solution Goes Here ->
 def hide_cc_num(cc_num):
-    cc_num_input = []
-    cc_num_input.append(cc_num)
-    return(cc_num_input) 
-    # top_range = len(cc_num) + 1
-    # return(top_range)
-print(hide_cc_num(123))
+    str_cc = str(cc_num)
+    cc_length = len(str_cc)
+    cc_start_range = cc_length - 4
+    last_4_cc = str_cc[cc_start_range:]
+
+    cc_list = list(str_cc)
+    beg_cc_str = []
+    for num in cc_list:
+        beg_cc_str.append('*')
+
+    show_cc_last_4 = "".join(beg_cc_str) + last_4_cc
+
+    print(show_cc_last_4)
+    return(show_cc_last_4)
+  
+hide_cc_num(2276542210)
 # ---------------------------------
-
-
 
 # ### 4) Online status
 # The aim of this challenge is, given a dictionary of people's online status, to count the number of people who are online.
