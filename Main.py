@@ -15,7 +15,50 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+# Function to convert minutes to seconds
+def minutes_to_seconds(minutes):
+    return minutes * 60
+minutes = 5
+seconds = minutes_to_seconds(minutes)
+
+# Function to convert hours to seconds
+def hours_to_seconds(hours):
+    return hours * 3600
+hours = 2
+seconds = hours_to_seconds(hours)
+
+# Calculate the total seconds in a day
+def calculate_seconds_in_a_day():
+    hours_per_day = 24
+    return hours_to_seconds(hours_per_day)
+seconds_in_a_day = calculate_seconds_in_a_day()
+
+# Calculate the total hours in the month of June
+def calculate_hours_in_june():
+    days_in_june = 30
+    hours_per_day = 24
+    return days_in_june * hours_per_day
+
+# Calculate the total minutes in the month of August
+def calculate_minutes_in_august():
+    days_in_august = 31
+    hours_per_day = 24
+    minutes_per_hour = 60
+    return days_in_august * hours_per_day * minutes_per_hour
+
+# Perform the calculations
+seconds_in_a_day = calculate_seconds_in_a_day()
+hours_in_june = calculate_hours_in_june()
+minutes_in_august = calculate_minutes_in_august()
+
+# Print results
+print(f"{minutes} minutes is equal to {seconds} seconds.")
+print(f"{hours} hours is equal to {seconds} seconds.")
+print(f"There are {seconds_in_a_day} seconds in a day.")
+print(f"Seconds in a day: {seconds_in_a_day}")
+print(f"Hours in June: {hours_in_june}")
+print(f"Minutes in August: {minutes_in_august}")
+
 # ---------------------------------
 
 
@@ -27,7 +70,19 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def mid(string):
+    length = len(string)
+    if length % 2 == 0:
+        return ""
+    else:
+        middle_index = length // 2
+        return string[middle_index]
+
+print(mid("Hello"))  # Output: "l"
+print(mid("Python")) # Output: "t"
+print(mid("AI"))     # Output: ""
+
+
 # ---------------------------------
 
 
@@ -36,7 +91,20 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def hide_credit_card_number(card_number):
+    if len(card_number) < 4:
+        return "Invalid card number"  # Return error message if the length is less than 4
+    
+    hidden_digits = '*' * (len(card_number) - 4)  # Hide all characters except the last four
+    visible_digits = card_number[-4:]  # Extract the last four characters
+    
+    return hidden_digits + visible_digits
+
+# Example usage:
+print(hide_credit_card_number("1234567894444"))  # Output: "*********4444"
+print(hide_credit_card_number("1234"))           # Output: "1234" (length less than 4)
+print(hide_credit_card_number("123"))            # Output: "Invalid card number" (length less than 4)
+
 # ---------------------------------
 
 
@@ -62,7 +130,22 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def online_count(statuses):
+    count = 0
+    for status in statuses.values():
+        if status == "online":
+            count += 1
+    return count
+
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
+
+print(online_count(statuses))  # Output: 2
+
 # ---------------------------------
 
 
@@ -72,7 +155,17 @@
 # The function should return the price of the item after the discount has been applied. For example, if the price is 100 and the discount is 20, the function should return 80.
 
 # ---------------------------------
-#      Solution Goes Here ->
+def apply_discount(full_price, discount_percentage):
+    discounted_amount = (discount_percentage / 100) * full_price
+    discounted_price = full_price - discounted_amount
+    return discounted_price
+
+# Example usage:
+full_price = 100
+discount_percentage = 20
+discounted_price = apply_discount(full_price, discount_percentage)
+print(discounted_price)  # Output: 80
+
 # ---------------------------------
 
 
@@ -83,7 +176,15 @@
 
 
 # ---------------------------------
-#      Solution Goes Here ->
+def calculate_hypotenuse(adjacent, opposite):
+    hypotenuse = (adjacent ** 2 + opposite ** 2) ** 0.5
+    return int(hypotenuse)
+
+adjacent_leg = 3
+opposite_leg = 4
+hypotenuse = calculate_hypotenuse(adjacent_leg, opposite_leg)
+print(hypotenuse)  # Output: 5
+
 # ---------------------------------
 
 
@@ -96,5 +197,5 @@
 # Create a python function that takes two numbers and finds the next Nine intervals using the Fibonacci Sequence
 
 # ---------------------------------
-#      Solution Goes Here ->
+
 # ---------------------------------
