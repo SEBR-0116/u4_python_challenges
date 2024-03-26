@@ -141,7 +141,13 @@ discounted_price(100,20)
 
 # ---------------------------------
 #      Solution Goes Here ->
+#formula is a^2 + b^2 = c^2
+def get_hypotenouse(adj,opp):
+    hyp = math.sqrt((adj**2)+(opp**2))
+    print(f'6) The hypotenouse (when given the Adjacent and Opposite legs of {adj} and {opp}) is {hyp}')
+    return hyp
 
+get_hypotenouse(11,54)
 # ---------------------------------
 
 
