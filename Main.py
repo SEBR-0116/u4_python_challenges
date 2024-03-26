@@ -123,9 +123,16 @@ online_count(statuses)
 
 # ---------------------------------
 #      Solution Goes Here ->
+def discounted_price(full_price,discount):
+    x = (100 - discount) / 100
+    new_price = full_price * x
+
+    print(f'5) The discounted price of the given amounts is: {new_price}')
+    return new_price
+
+discounted_price(100,20)
+
 # ---------------------------------
-
-
 #  6) Pythagorean Theorum
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
@@ -134,6 +141,7 @@ online_count(statuses)
 
 # ---------------------------------
 #      Solution Goes Here ->
+
 # ---------------------------------
 
 
@@ -147,4 +155,5 @@ online_count(statuses)
 
 # ---------------------------------
 #      Solution Goes Here ->
+
 # ---------------------------------
