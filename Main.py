@@ -137,8 +137,6 @@ discounted_price(100,20)
 
 # As any High School sophomore will tell you, the sum of the squares of two legs of a right trangle will equal the square of the hypotenouse.
 # Create a function that takes two integers as the Adjacent and Opposite legs of a triangle, and returns an integer of the Hypotenouse
-
-
 # ---------------------------------
 #      Solution Goes Here ->
 #formula is a^2 + b^2 = c^2
@@ -150,7 +148,6 @@ def get_hypotenouse(adj,opp):
 get_hypotenouse(11,54)
 # ---------------------------------
 
-
 #  7) Fibonacci Sequence 
 # Everyone's favorite Math Problem!
 
@@ -161,5 +158,25 @@ get_hypotenouse(11,54)
 
 # ---------------------------------
 #      Solution Goes Here ->
+def fib_sequencer(num1,num2):
+    first_num = num1
+    sec_num = num2
+    count = 0
+    fib_nums = []
+    while count <= 4:
+        count +=1
+        third_num = first_num + sec_num
+        fourth_num = sec_num + third_num
+        fib_nums.append(third_num)
+        fib_nums.append(fourth_num)
+        first_num = third_num
+        sec_num = fourth_num
 
+    fib_nums.pop()
+    fib_nums_str = ",".join(str(element) for element in fib_nums)
+
+    print(f'7) The 9 Fibonacci numbers folowing {num1} and {num2} are: {fib_nums_str}') 
+    return fib_nums
+
+fib_sequencer(5,2)
 # ---------------------------------
